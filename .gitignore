@@ -91,3 +91,4 @@ target/
 
 # environment
 .venv/
+/run_information.json

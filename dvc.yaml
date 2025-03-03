@@ -43,3 +43,12 @@ stages:
       - ./models/encoder.joblib
       - ./models/model.joblib
       - ./data/processed/test.csv
+      - ./data/processed/train.csv
+    outs:
+      - ./run_information.json
+
+  register_model:
+    cmd: python ./src/models/register_model.py
+    deps:
+      - ./src/models/register_model.py
+      - ./run_information.json
