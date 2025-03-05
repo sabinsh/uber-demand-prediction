@@ -124,10 +124,12 @@ if __name__ == "__main__":
     # calculate avg pickups using EWMA
     # dataset with pickup smoothing applied
     resampled_data["avg_pickups"] = (
-                resampled_data['total_pickups']
+                resampled_data
+                .groupby("region")['total_pickups']
                 .ewm(**ewma_params)
                 .mean()
                 .round()
+                .values
             )
     logger.info("Average pickups calculated successfully using EWMA")
     
