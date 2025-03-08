@@ -1,5 +1,5 @@
 outs:
-- md5: 63b0e9b6595422e81788e822534491e6
-  size: 3648167
+- md5: 39ae3c00963e2daf1f195a14f7aa62f0
+  size: 608027
   hash: md5
   path: plot_data.csv
