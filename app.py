@@ -1,7 +1,6 @@
 import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn import pipeline
 import streamlit as st
 from pathlib import Path
 import datetime as dt
@@ -57,15 +56,19 @@ time = st.time_input("Select the time", value=None)
 st.write("**Current Time:**", time)
 
 if date and time:
-       # create the datetime index
-       index = pd.Timestamp(f"{date} {time}")
-       st.write("**Date & Time:**", index)
 
        # next time interval
        delta = dt.timedelta(minutes=15)
-       next_interval = index + delta
+       next_interval = dt.datetime(year=date.year,
+                                   month=date.month,
+                                   day=date.day, 
+                                   hour=time.hour, 
+                                   minute=time.minute) + delta
        st.write("Demand for Time: ", next_interval.time())
 
+       # create the datetime index
+       index = pd.Timestamp(f"{date} {next_interval.time()}")
+       st.write("**Date & Time:**", index)
        
        # sample a latitude longitude value
        st.subheader("Location")
@@ -143,7 +146,7 @@ if date and time:
                      f'<div style="display: flex; align-items: center;">'
                      f'<div style="background-color:{color}; width: 20px; height: 10px; margin-right: 10px;"></div>'
                      f'Region ID: {region_id} <br>'
-                     f"Demand: {int(demand)} <br>", unsafe_allow_html=True
+                     f"Demand: {int(demand)} <br> <br>", unsafe_allow_html=True
                      )
               
        elif map_type == "Only for Neighborhood Regions":
@@ -193,7 +196,7 @@ if date and time:
                      f'<div style="display: flex; align-items: center;">'
                      f'<div style="background-color:{color}; width: 20px; height: 10px; margin-right: 10px;"></div>'
                      f'Region ID: {region_id} <br>'
-                     f"Demand: {int(demand)} <br>", unsafe_allow_html=True
+                     f"Demand: {int(demand)} <br> <br>", unsafe_allow_html=True
               )
        
        
