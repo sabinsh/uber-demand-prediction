@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 uber-demand-prediction
 ==============================
 
@@ -55,3 +56,7 @@ Project Organization
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+=======
+# uber-demand-prediction
+Predicting demand for cabs across New York City for the next time intervals.
+>>>>>>> b5de8a10349ec3502a8880439d2a305b59099aff
