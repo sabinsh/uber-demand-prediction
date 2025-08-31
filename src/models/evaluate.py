@@ -10,10 +10,10 @@ from sklearn.metrics import mean_absolute_percentage_error
 
 
 import dagshub
-dagshub.init(repo_owner='himanshu1703', repo_name='uber-demand-prediction', mlflow=True)
+dagshub.init(repo_owner='sabinsh', repo_name='uber-demand-prediction', mlflow=True)
 
 # set the mlflow tracking uri
-mlflow.set_tracking_uri("https://dagshub.com/himanshu1703/uber-demand-prediction.mlflow")
+mlflow.set_tracking_uri("https://dagshub.com/sabinsh/uber-demand-prediction.mlflow")
 
 # set the experiment name
 mlflow.set_experiment("DVC Pipeline")
