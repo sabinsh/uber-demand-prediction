@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 uber-demand-prediction
 ==============================
-
 Predicting demand for cabs across New York City for the next time intervals.
 
 ![Uber Demand App](images/uber-demand-app.png)
@@ -61,4 +59,3 @@ Project Organization
 =======
 # uber-demand-prediction
 Predicting demand for cabs across New York City for the next time intervals.
->>>>>>> b5de8a10349ec3502a8880439d2a305b59099aff
